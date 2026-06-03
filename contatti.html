@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>Contatti – Ex Charta ETS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="nav-left">
+      <a href="index.html">
+        <img src="img/logogrande.png" alt="Logo Ex Charta ETS">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html#chi-siamo">Chi siamo</a></li>
+        <li><a href="index.html#cosa-facciamo">Cosa facciamo</a></li>
+        <li><a href="index.html#unisciti">Unisciti a noi</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </nav>
+    <a href="contatti.html" class="btn btn-primary">Scrivici</a>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <h2>Contatti</h2>
+    <p>
+      Vuoi partecipare a una comunità di lettura, proporre un progetto o
+      avviare una collaborazione? Compila il form qui sotto oppure scrivici
+      direttamente via email.
+    </p>
+
+    <form action="#" method="post">
+      <!-- Da collegare in seguito a backend, Formspree, ecc. -->
+      <div>
+        <label for="nome">Nome e cognome</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="messaggio">Messaggio</label>
+        <textarea id="messaggio" name="messaggio" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Invia</button>
+    </form>
+
+    <p class="hero-meta" style="margin-top:1rem;">
+      In alternativa: <a href="mailto:info@excharta.it">info@excharta.it</a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <strong>Ex Charta ETS</strong><br>
+      Bellegra (RM) – Italia
+    </div>
+    <div>
+      Email: <a href="mailto:info@excharta.it">info@excharta.it</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
