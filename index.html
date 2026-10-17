@@ -1,153 +1,399 @@
-<!doctype html>
-<html lang="it">
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <title>Ex Charta ETS – Territori del Grand Tour</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="Ex Charta ETS valorizza il patrimonio immateriale tra Olevano Romano, Bellegra e Subiaco attraverso narrazione, comunità di lettura e linguaggi audiovisivi.">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex Charta ETS | Associazione Culturale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ex-orange': '#E05A10',
+                        'ex-orange-hover': '#C84E0B',
+                        'ex-navy': '#0D233A',
+                        'ex-navy-light': '#1A3856',
+                        'ex-cream': '#FBF9F5',
+                        'ex-warm-gray': '#F3EFEA'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .editorial-shadow {
+            box-shadow: 0 20px 40px -15px rgba(13, 35, 58, 0.12);
+        }
+        .book-3d {
+            transform: perspective(1000px) rotateY(-12deg) rotateX(4deg);
+            transition: transform 0.5s ease;
+            box-shadow: -15px 20px 30px rgba(0,0,0,0.25);
+        }
+        .book-3d:hover {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(-5px);
+        }
+    </style>
 </head>
-<body>
-<header>
-  <div class="navbar">
-    <div class="nav-left">
-      <a href="index.html">
-        <img src="img/NewLogoEXChartaRidim.jpeg" alt="Logo Ex Charta ETS">
-      </a>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#chi-siamo">Chi siamo</a></li>
-        <li><a href="#cosa-facciamo">Cosa facciamo</a></li>
-        <li><a href="#news-section">News</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-      </ul>
-    </nav>
-    <a href="contatti.html" class="btn btn-primary">Contattaci</a>
-  </div>
-</header>
+<body class="font-sans bg-ex-cream text-ex-navy antialiased selection:bg-ex-orange selection:text-white">
 
-<main>
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Diamo nuova voce ai territori del Grand Tour</h1>
-      <p>
-        Ex Charta ETS è un’associazione culturale che trasforma memoria storica
-        e paesaggio culturale tra Olevano Romano, Bellegra e Subiaco in
-        esperienze narrative, artistiche e partecipate.
-      </p>
-      <a class="btn btn-primary" href="#unisciti">Scopri come partecipare</a>
-      <p class="hero-meta">
-        Ente del Terzo Settore – finalità civiche, solidaristiche e di utilità sociale.
-      </p>
-    </div>
-    <div>
-      <div class="card">
-        <h3>Dal patrimonio immateriale alle storie vive</h3>
-        <p>
-          Progetti culturali, comunità di lettura e linguaggi audiovisivi
-          per restituire voce ai territori del Lazio legati al Grand Tour.
-        </p>
-      </div>
-    </div>
-  </section>
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-ex-cream/95 backdrop-blur-md border-b border-ex-navy/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo modificato con images/logonew.png -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <img src="images/logonew.png" alt="Ex Charta Logo" class="h-12 w-auto object-contain transition-transform group-hover:scale-105">
+                    <div>
+                        <span class="block font-serif text-2xl font-bold tracking-wider text-ex-navy leading-none">EX CHARTA</span>
+                        <span class="block text-[10px] tracking-[0.2em] font-semibold text-ex-orange uppercase mt-1">Associazione Culturale ETS</span>
+                    </div>
+                </a>
 
-  <section id="news-section" class="section">
-    <h2>Ultime News</h2>
-    <div id="news-container">
-      <p>Il sistema è pronto. Accedi a <a href="/admin">/admin</a> per pubblicare la prima notizia.</p>
-    </div>
-  </section>
+                <!-- Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-8 text-xs tracking-widest font-semibold uppercase">
+                    <a href="#chi-siamo" class="text-ex-navy hover:text-ex-orange transition-colors">Chi Siamo</a>
+                    <a href="#borghi" class="text-ex-navy hover:text-ex-orange transition-colors">Territorio</a>
+                    <a href="#cartiera" class="text-ex-navy hover:text-ex-orange transition-colors">La Cartiera</a>
+                    <a href="#progetti" class="text-ex-navy hover:text-ex-orange transition-colors">Progetti</a>
+                    <a href="#contatti" class="text-ex-navy hover:text-ex-orange transition-colors">Contatti</a>
+                </nav>
 
-  <section id="chi-siamo" class="section">
-    <h2>Chi siamo</h2>
-    <div class="two-cols">
-      <div>
-        <p>
-          Ex Charta ETS è un’associazione culturale dedicata alla salvaguardia
-          e alla valorizzazione del patrimonio immateriale tra Olevano Romano,
-          Bellegra e Subiaco. Operiamo per trasformare la memoria storica e il
-          paesaggio culturale in risorse narrative vive, capaci di generare
-          partecipazione e nuove forme di produzione artistica in una
-          prospettiva europea.
-        </p>
-        <p>
-          L’associazione agisce nel quadro del Codice del Terzo Settore,
-          perseguendo finalità civiche, solidaristiche e di utilità sociale.
-        </p>
-        <p>
-          <a href="chi-siamo.html" class="btn btn-outline">Approfondisci la nostra identità</a>
-        </p>
-      </div>
-      <div>
-        <ul class="bullets">
-          <li>Patrimonio immateriale e memoria dei luoghi.</li>
-          <li>Narrazioni contemporanee a partire dal Grand Tour.</li>
-          <li>Rete culturale locale con apertura europea.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+                <!-- Language Selector & CTA -->
+                <div class="flex items-center space-x-4">
+                    <div class="text-xs font-semibold tracking-wider text-ex-navy border-r border-ex-navy/20 pr-4">
+                        <span class="text-ex-orange font-bold">IT</span> <span class="text-ex-navy/40">|</span> <a href="#" class="text-ex-navy/60 hover:text-ex-navy">EN</a>
+                    </div>
+                    <a href="#contatti" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-semibold tracking-widest text-white bg-ex-orange hover:bg-ex-orange-hover transition-all shadow-sm uppercase">
+                        Partecipa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <section id="cosa-facciamo" class="section">
-    <h2>Cosa facciamo</h2>
-    <p>
-      Attraverso la creazione di comunità di lettura, percorsi di narrazione
-      storica e lo sviluppo di linguaggi audiovisivi, restituiamo voce ai
-      territori del Grand Tour. Collaboriamo con partner strategici, come il
-      Polo Museale “Borgo dei Cartai”, per promuovere un turismo culturale e
-      sociale che unisca tradizione e innovazione.
-    </p>
+    <!-- BANNER PRINCIPALE HERO (LUMINOSO) -->
+    <section class="relative h-[55vh] min-h-[420px] max-h-[550px] flex items-center justify-center bg-ex-navy overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/banner01.jpg" 
+                 alt="Ex Charta Banner Territorio Grand Tour" 
+                 class="w-full h-full object-cover object-center scale-105 transition-transform duration-10000 opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-r from-ex-navy/40 via-transparent to-ex-navy/30"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-ex-navy/60 via-transparent to-transparent"></div>
+        </div>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Comunità di lettura</h3>
-        <p>Gruppi di lettura e approfondimento legati al paesaggio culturale del territorio.</p>
-      </div>
-      <div class="card">
-        <h3>Narrazione storica</h3>
-        <p>Percorsi, laboratori e storytelling che attualizzano il Grand Tour.</p>
-      </div>
-      <div class="card">
-        <h3>Linguaggi audiovisivi</h3>
-        <p>Video, podcast e sperimentazioni multimediali per raccontare i luoghi.</p>
-      </div>
-      <div class="card">
-        <h3>Reti e partnership</h3>
-        <p>
-          Collaborazioni con istituzioni culturali per sviluppare turismo
-          culturale e sociale nel Lazio e oltre.
-        </p>
-      </div>
-    </div>
-  </section>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-12">
+            <span class="inline-block px-4 py-1 mb-4 rounded-full border border-white/50 text-[11px] tracking-[0.25em] uppercase font-medium bg-ex-navy/40 backdrop-blur-md drop-shadow-md">
+                Ente Terzo Settore — Valori & Comunità
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tight leading-[1.1] text-white drop-shadow-lg">
+                EX CHARTA
+            </h1>
+            <p class="font-serif italic text-2xl sm:text-4xl text-amber-200 mt-2 font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                Dallo sguardo alla voce.
+            </p>
+            <p class="max-w-xl mx-auto mt-4 text-xs sm:text-base text-white font-semibold leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                Paesaggi, persone e valori nei territori del Grand Tour tra Olevano Romano, Bellegra e Subiaco.
+            </p>
+            <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="#chi-siamo" class="w-full sm:w-auto px-6 py-3 rounded-full bg-ex-orange hover:bg-ex-orange-hover text-white text-xs tracking-widest uppercase font-semibold transition-all shadow-lg hover:shadow-ex-orange/30">
+                    Scopri il Progetto &rarr;
+                </a>
+                <a href="#cartiera" class="w-full sm:w-auto px-6 py-3 rounded-full border border-white/80 bg-ex-navy/30 hover:bg-white/20 text-white text-xs tracking-widest uppercase font-semibold transition-all backdrop-blur-sm">
+                    Il Romanzo "La Cartiera"
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CHI SIAMO & SECONDO BANNER -->
+    <section id="chi-siamo" class="py-24 bg-ex-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-block">
+                        <span class="text-xs font-semibold tracking-[0.2em] text-ex-orange uppercase block mb-1">Un territorio, tante storie</span>
+                        <div class="h-0.5 w-12 bg-ex-orange"></div>
+                    </div>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-ex-navy font-normal leading-tight">
+                        Paesaggi, persone e valori.
+                    </h2>
+                    <p class="text-ex-navy/80 leading-relaxed font-light text-lg">
+                        Luoghi, comunità e tradizioni che da secoli ispirano viaggiatori, artisti e racconti, oggi protagonisti di nuove narrazioni partecipate e contemporanee.
+                    </p>
+                    <p class="text-ex-navy/70 leading-relaxed text-sm">
+                        Ex Charta ETS è un’associazione culturale che trasforma la memoria storica e il paesaggio culturale tra Olevano Romano, Bellegra e Subiaco in risorse narrative vive, capaci di generare partecipazione e nuove forme di produzione artistica.
+                    </p>
+                    <div class="pt-4">
+                        <a href="#progetti" class="inline-flex items-center space-x-2 text-xs font-bold tracking-widest uppercase text-ex-navy border-b-2 border-ex-navy pb-1 hover:text-ex-orange hover:border-ex-orange transition-colors">
+                            <span>Chi siamo &rarr;</span>
+                        </a>
+                    </div>
+                </div>
 
-  <section id="unisciti" class="section">
-    <h2>Condividi le idee</h2>
-    <div class="cta-block">
-      <p>
-        Siamo una rete aperta a professionisti, enti e cittadine/i che
-        condividono la visione di una cultura come motore di crescita civica.
-        Contattaci per scoprire come partecipare ai nostri progetti o per
-        costruire insieme nuove opportunità di networking nazionale e
-        internazionale.
-      </p>
-      <a class="btn btn-primary" href="contatti.html">Contattaci</a>
-    </div>
-  </section>
-</main>
+                <div class="lg:col-span-7">
+                    <div class="relative rounded-2xl overflow-hidden editorial-shadow group">
+                        <img src="images/banner02.jpg" 
+                             alt="Persone nel borgo medievale" 
+                             class="w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ex-navy/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <span class="text-xs font-semibold uppercase tracking-widest text-amber-200">Comunità & Identità</span>
+                            <p class="font-serif text-xl mt-1">Dalla memoria storica alle voci del presente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <div class="footer-inner">
-    <div>
-      <strong>Ex Charta ETS – Ente del Terzo Settore CF 93034460589</strong><br>
-      Sede: 00030 Bellegra (RM) – Italia
+    <!-- TRE BORGHI -->
+    <section id="borghi" class="py-24 bg-ex-warm-gray border-y border-ex-navy/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-[0.2em] text-ex-orange uppercase block mb-2">Tre territori, un'unica storia</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-ex-navy font-normal">I Borghi del Grand Tour</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Olevano Romano -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/olevano.jpg" 
+                             alt="Olevano Romano" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ex-navy/40 to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="font-serif text-2xl text-ex-navy font-bold mb-2">Olevano Romano</h3>
+                            <p class="text-sm text-ex-navy/70">Arte, paesaggi e comunità d'ispirazione per i grandi pittori dell'800.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-ex-orange uppercase tracking-wider">Scopri il borgo</span>
+                            <span class="text-ex-orange transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bellegra -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/bellegra.jpg" 
+                             alt="Bellegra" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ex-navy/40 to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="font-serif text-2xl text-ex-navy font-bold mb-2">Bellegra</h3>
+                            <p class="text-sm text-ex-navy/70">Natura incontaminata, tradizioni vive e sincera ospitalità locale.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-ex-orange uppercase tracking-wider">Scopri il borgo</span>
+                            <span class="text-ex-orange transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subiaco -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="images/subiaco.jpg" 
+                             alt="Subiaco" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-ex-navy/40 to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="font-serif text-2xl text-ex-navy font-bold mb-2">Subiaco</h3>
+                            <p class="text-sm text-ex-navy/70">Storia millenaria, cultura benedettina, monasteri e grande spiritualità.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-ex-orange uppercase tracking-wider">Scopri il borgo</span>
+                            <span class="text-ex-orange transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ROMANZO LA CARTIERA (Copertina completa senza tagli) -->
+<section id="cartiera" class="py-24 bg-gradient-to-b from-ex-cream via-amber-50/40 to-ex-cream relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 flex justify-center">
+                <!-- Sostituito object-cover con object-contain per mostrare l'immagine intera senza tagli -->
+                <div class="relative w-64 sm:w-80 h-[450px] rounded-r-lg book-3d overflow-hidden border-l-8 border-amber-900 bg-ex-navy flex items-center justify-center p-2">
+                    <img src="images/cartiera.jpg" alt="Copertina Libro La Cartiera" class="max-h-full max-w-full object-contain rounded-sm">
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-6">
+                <span class="text-xs font-semibold tracking-[0.2em] text-ex-orange uppercase block">Il Romanzo</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-ex-navy font-italic">La Cartiera</h2>
+                <p class="text-lg text-ex-navy font-medium italic">Un romanzo. Un territorio. Una comunità. Un racconto.</p>
+                <p class="text-ex-navy/80 leading-relaxed font-light">
+                    Ambientato nelle montagne del Lazio, tra Olevano Romano, Bellegra e Subiaco, il romanzo racconta le vicende di una comunità, mettendo in luce la bellezza dei luoghi e la forza delle persone che li abitano, tra paesaggi, valori e relazioni.
+                </p>
+                <div class="pt-4">
+                    <a href="#contatti" class="inline-flex items-center px-8 py-4 rounded-full bg-ex-orange hover:bg-ex-orange-hover text-white text-xs tracking-widest uppercase font-semibold transition-all shadow-md">
+                        Scopri La Cartiera &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-      Email: <a href="mailto:info@excharta.org">info@excharta.org</a>
-    </div>
-  </div>
-</footer>
+</section>
+
+    <!-- PROGETTI -->
+    <section id="progetti" class="py-24 bg-ex-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-[0.2em] text-ex-orange uppercase block mb-2">I nostri progetti</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-ex-navy font-normal">Tre percorsi, una stessa visione.</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="p-8 rounded-2xl bg-white border border-ex-navy/5 shadow-sm hover:border-ex-orange/30 transition-all group">
+                    <div class="w-16 h-16 rounded-xl bg-ex-warm-gray text-ex-navy flex items-center justify-center mb-6 group-hover:bg-ex-orange group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h4m-4 0V3m4 18V3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-2xl text-ex-navy font-bold mb-3">Memoria del territorio e Grand Tour europeo</h3>
+                    <p class="text-sm text-ex-navy/70 leading-relaxed">Arte, paesaggi e culture in dialogo per valorizzare il patrimonio materiale e immateriale dei borghi.</p>
+                    <a href="#" class="inline-block mt-6 text-xs font-semibold text-ex-orange uppercase tracking-wider hover:underline">&rarr; Approfondisci</a>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-white border border-ex-navy/5 shadow-sm hover:border-ex-orange/30 transition-all group">
+                    <div class="w-16 h-16 rounded-xl bg-ex-warm-gray text-ex-navy flex items-center justify-center mb-6 group-hover:bg-ex-orange group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-2xl text-ex-navy font-bold mb-3">Comunità di lettura e narrazione condivisa</h3>
+                    <p class="text-sm text-ex-navy/70 leading-relaxed">Incontri, persone e storie per nuovi sguardi sul territorio e gruppi d'ascolto integrati.</p>
+                    <a href="#" class="inline-block mt-6 text-xs font-semibold text-ex-orange uppercase tracking-wider hover:underline">&rarr; Approfondisci</a>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-white border border-ex-navy/5 shadow-sm hover:border-ex-orange/30 transition-all group">
+                    <div class="w-16 h-16 rounded-xl bg-ex-warm-gray text-ex-navy flex items-center justify-center mb-6 group-hover:bg-ex-orange group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-2xl text-ex-navy font-bold mb-3">Dal romanzo allo schermo</h3>
+                    <p class="text-sm text-ex-navy/70 leading-relaxed">Nuovi linguaggi audiovisivi e cinematografici per raccontare la bellezza autentica del territorio.</p>
+                    <a href="#" class="inline-block mt-6 text-xs font-semibold text-ex-orange uppercase tracking-wider hover:underline">&rarr; Approfondisci</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER BOTTOM -->
+    <section class="relative py-28 bg-ex-navy overflow-hidden text-white">
+        <div class="absolute inset-0 opacity-40">
+            <img src="images/banner01.jpg" 
+                 alt="Itinerari del territorio" 
+                 class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-4xl sm:text-6xl font-normal leading-tight">Un territorio da vivere</h2>
+            <p class="text-lg text-amber-100/90 font-light mt-4">Itinerari tra paesaggi, borghi e tradizioni del Lazio.</p>
+            <div class="mt-8">
+                <a href="#contatti" class="inline-flex items-center px-8 py-4 rounded-full border-2 border-white hover:bg-white hover:text-ex-navy text-white text-xs tracking-widest uppercase font-semibold transition-all">
+                    Scopri gli itinerari &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NETLIFY CONTACT FORM -->
+    <section id="contatti" class="py-24 bg-ex-warm-gray">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 editorial-shadow border border-ex-navy/5">
+                <div class="text-center max-w-lg mx-auto mb-10">
+                    <span class="text-xs font-semibold tracking-[0.2em] text-ex-orange uppercase block mb-2">Restiamo in contatto</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-ex-navy font-bold">Scrivici un messaggio</h2>
+                    <p class="text-sm text-ex-navy/70 mt-2">Vuoi partecipare ai nostri progetti o richiedere informazioni? Compila il modulo.</p>
+                </div>
+
+                <form name="contact" method="POST" data-netlify="true" class="space-y-6">
+                    <input type="hidden" name="form-name" value="contact" />
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-ex-navy mb-2">Nome e Cognome</label>
+                            <input type="text" name="name" required placeholder="Mario Rossi" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-ex-orange text-sm bg-ex-cream/30">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-ex-navy mb-2">Email</label>
+                            <input type="email" name="email" required placeholder="mario@esempio.it" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-ex-orange text-sm bg-ex-cream/30">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-ex-navy mb-2">Oggetto</label>
+                        <input type="text" name="subject" required placeholder="Richiesta informazioni sui progetti" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-ex-orange text-sm bg-ex-cream/30">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-ex-navy mb-2">Messaggio</label>
+                        <textarea name="message" rows="4" required placeholder="Scrivi qui il tuo messaggio..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-ex-orange text-sm bg-ex-cream/30"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-ex-orange hover:bg-ex-orange-hover text-white text-xs tracking-widest uppercase font-bold transition-all shadow-md">
+                        Invia Messaggio
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CON DATI SOCIETARI -->
+    <footer class="bg-ex-navy text-white/80 py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-white/10">
+                <div class="md:col-span-5 space-y-4">
+                    <span class="font-serif text-2xl font-bold text-white tracking-wider block">EX CHARTA ETS</span>
+                    <p class="text-xs text-white/60 leading-relaxed max-w-sm">
+                        Ente del Terzo Settore — finalità civiche, solidaristiche e di utilità sociale. Valorizziamo la memoria storica e il paesaggio culturale tra Olevano Romano, Bellegra e Subiaco.
+                    </p>
+                </div>
+                <div class="md:col-span-3 space-y-2">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-ex-orange block mb-3">Link Rapidi</span>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#chi-siamo" class="hover:text-white transition-colors">Chi Siamo</a></li>
+                        <li><a href="#borghi" class="hover:text-white transition-colors">Territorio</a></li>
+                        <li><a href="#cartiera" class="hover:text-white transition-colors">La Cartiera</a></li>
+                        <li><a href="#progetti" class="hover:text-white transition-colors">I Progetti</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-4 space-y-2 text-xs">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-ex-orange block mb-3">Sede e Contatti</span>
+                    <p class="font-semibold text-white">Ex Charta ETS – Ente del Terzo Settore</p>
+                    <p>Codice Fiscale: 93034460589</p>
+                    <p>Sede: 00030 Bellegra (RM) – Italia</p>
+                    <p>Territorio interessato: Olevano Romano, Bellegra, Subiaco (RM)</p>
+                    <p class="pt-1">Email: <a href="mailto:info@excharta.it" class="hover:text-white underline">info@excharta.it</a></p>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40">
+                <p>&copy; 2026 Ex Charta ETS. Tutti i diritti riservati.</p>
+                <p class="mt-2 sm:mt-0">Sito web statico su Netlify</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
